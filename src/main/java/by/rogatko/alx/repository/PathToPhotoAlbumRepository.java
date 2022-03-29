@@ -1,9 +1,9 @@
 package by.rogatko.alx.repository;
 
-import by.rogatko.alx.entity.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-@Repository
-public interface UserMessagesRepository extends JpaRepository<Message,String> {
+@Transactional
+public interface PathToPhotoAlbumRepository extends JpaRepository {
 }

@@ -1,23 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alx.rogatko
-  Date: 23.03.2022
-  Time: 13:57
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Welcome!!!</title>
+    <title>Login_page...</title>
 </head>
-<input><br>
-Login, please!
+<body>
 
-
-<br>
-<form method="post" name="username">
-</form><br>
-<input type="password" name="password">input your password</input>
-<form method="post" type="password"></form>
 </body>
 </html>

@@ -2,34 +2,27 @@ package by.rogatko.alx.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.ArrayList;
 @Entity
+@Getter
 public class User {
-    @Getter
-    @Setter
-    private String username;
-    @Getter
-    @Setter
-    private String userSurname;
-    @Getter
-    @Setter
-    private int[] userDateOfBorn;
-    @Getter
-    @Setter
-    private int[] dateOfRegistration;
-    @Getter
-    @Setter
-    private String userId;
-    @Getter
-    @Setter
-    private String role;
-    @Getter
-    @Setter
-    private String[] friendlist;
-    @Getter
-    @Setter
-    private String[] blacklist;
+    @Id
+    @GeneratedValue(generator = "uuid-generator")
+    @GenericGenerator(name = "uuid-generator", strategy = "uuid")
+    private String id;
+
+    private String name;
+
+    private String surname;
+
+
+
+
+
 
 }
