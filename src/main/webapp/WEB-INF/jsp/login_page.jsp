@@ -7,8 +7,8 @@
 </head>
 <body>
 <form method="post" action="/login">
-    <input type="text" name="userID" placeholder="Ваш UserID">
-    <input type="password" name="password" placeholder="Пароль">
+    <input type="text" name="login" placeholder="Ваш Логин"><br>
+    <input type="password" name="password" placeholder="Пароль"><br>
     <button type="submit">ВХОД</button>
 </form><br>
 <a href="/registration">РЕГИСТРАЦИЯ</a>

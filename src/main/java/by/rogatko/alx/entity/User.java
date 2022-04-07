@@ -27,21 +27,10 @@ public class User {
 @Setter
     private String password;
 @Setter
-    private int invites;
-
-public class Invite{
-    ArrayList<String> invites = new ArrayList<>();
-    void invitesGenerate(){
-
-
-    }
-    String ownerId;
+    private String login;
 
 
 
-
-
-}
 
 
 

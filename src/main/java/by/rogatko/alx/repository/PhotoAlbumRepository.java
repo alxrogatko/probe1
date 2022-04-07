@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public interface PathToPhotoAlbumRepository extends JpaRepository<User, String> {
+public interface PhotoAlbumRepository extends JpaRepository<User, String> {
 }

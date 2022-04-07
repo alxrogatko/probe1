@@ -5,11 +5,14 @@
     <title>Registration_page</title>
 </head>
 <body>
+${message}
 <form action="/registration" method="post" >
 
     <input type="text" name="name" placeholder="Имя"><br>
     <input type="text" name="surname" placeholder="Фамилия"><br>
-    <input type ="text" name="inviteCode" placeholder="Код приглашения"><br>
+    <input type ="text" name="login" placeholder="Логин"><br>
+    <input type="password" name="password" placeholder="Пароль"><br>
+    <input type="password" name="repassword" placeholder="Повтор пароля"><br>
 
     <button type="submit" >Регистрация</button>
 </form><br>
