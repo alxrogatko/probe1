@@ -28,5 +28,22 @@ public Optional<User> findUserByLogin(String login) {
     return userRepository.findUserByLogin(login);
 
 }
+public User getUserById(String id){return userRepository.getById(id);
+
+}
+public String getPasswordByLogin(String login){
+        Optional<User> user = userRepository.findUserByLogin(login);
+    return user.get().getPassword();
+}
+public String getIdByLogin(String login){
+      Optional<User> user = userRepository.findUserByLogin(login);
+      return user.get().getId();
+
+
+}
+public String getLoginById(String id){
+        String login = userRepository.findUserById(id).get().getLogin();
+        return login;
+}
 }
 
