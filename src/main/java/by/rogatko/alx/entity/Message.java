@@ -22,11 +22,11 @@ private String id;
     @Setter
     private String recipientId;
     @Setter
-    private Date date;
+    private Date dateOfSent;
     @Setter
-    private String text;
+    private String textOfMessage;
     @Setter
-    private boolean read;
+    private boolean readMessage;
 
 
 

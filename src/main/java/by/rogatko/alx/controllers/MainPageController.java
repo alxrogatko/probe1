@@ -33,7 +33,7 @@ public MainPageController(UserService userService){
 
     @GetMapping("/my_main_page{id}")
     public String showMainPage(@PathVariable("id")String id, Model model){
-        String message = userService.getUserById(id).getName();
+        String message = userService.getUserById(id).getName()+" "+userService.getUserById(id).getSurname();
        model.addAttribute("owner"," "+message);
         System.out.println(message);
 

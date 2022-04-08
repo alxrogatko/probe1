@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class MessageService {
@@ -18,9 +19,9 @@ public class MessageService {
 
     public void save(String senderId, String recipientId, Date date, String text){
         Message message = new Message() ;
-        message.setRead(false);
+        message.setReadMessage(false);
         message.setRecipientId(recipientId);
-        message.setDate(date);
+        message.setDateOfSent(date);
         message.setSenderId(senderId);
     }
 
@@ -29,8 +30,16 @@ messageRepository.save(message);
 
 
 }
+public List<Message> getMessageBySenderId(String senderId){
+     return   messageRepository.findMessageBySenderId(senderId);
 
 
+}
 
+    public List<Message> getMessageByRecipientId(String recipientId){
+        return   messageRepository.findMessageByRecipientId(recipientId);
+
+
+    }
 
 }
