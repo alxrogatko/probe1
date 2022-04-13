@@ -17,7 +17,7 @@ ${message}
     <button type="submit" >Регистрация</button>
 </form><br>
 
-
+<a href="/login_page">Страница входа</a>
 
 
 

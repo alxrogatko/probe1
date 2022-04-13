@@ -5,6 +5,10 @@
     <title>Сообщения</title>
 </head>
 <body>
+Страница сообщений
+<br>
+
+<a href="/my_main_page">вернуться</a>
 
 </body>
 </html>

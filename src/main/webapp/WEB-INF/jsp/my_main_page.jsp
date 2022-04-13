@@ -6,7 +6,12 @@
     <title>Main page</title>
 </head>
 <body>
-Вы вошли как ${owner}
+Вы вошли как ${owner}<br>
+<a href="/message_page">Сообщения</a><br>
+
+
+
+
 <a href="/logout">Выход</a>
 </body>
 </html>
