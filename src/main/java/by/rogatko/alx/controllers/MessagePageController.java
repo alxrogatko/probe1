@@ -1,7 +1,9 @@
 package by.rogatko.alx.controllers;
 
+import by.rogatko.alx.entity.User;
 import by.rogatko.alx.services.MessageService;
 import by.rogatko.alx.services.UserService;
+import lombok.SneakyThrows;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,23 +25,27 @@ public class MessagePageController {
     private MessageService messageService;
 
 
-    //
-
     private String id;
-    //
 
 
+    @SneakyThrows
     @GetMapping({"/message_page/id/{id}"})
     public String showMessagePage(@PathVariable("id") String id, Model model) {
+        System.out.println("Отладка message page");
         model.addAttribute("id", id);
-        System.out.println("message page");
 
-        return "/message_page"  ;
+        User user = userService.getUserById(id);
+        model.addAttribute("printName", user.getName() + " " + user.getSurname());
+        //работаю над этим
+model.addAttribute("outMessages",messageService.getMessagesBySenderId(id));
+model.addAttribute("inMessages",messageService.getMessagesByRecipientId(id));
+//конец
+        return "/message_page";
     }
 
     @GetMapping("/my_main_page")
-    public String returnToMain(){
-return "my_main_page"+"/id/"+id;
+    public String returnToMain() {
+        return "my_main_page" + "/id/" + id;
 
     }
 }

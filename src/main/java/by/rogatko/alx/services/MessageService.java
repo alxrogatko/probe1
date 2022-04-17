@@ -30,16 +30,18 @@ messageRepository.save(message);
 
 
 }
-public List<Message> getMessageBySenderId(String senderId){
+public List<Message> getMessagesBySenderId(String senderId){
      return   messageRepository.findMessageBySenderId(senderId);
 
 
 }
 
-    public List<Message> getMessageByRecipientId(String recipientId){
+    public List<Message> getMessagesByRecipientId(String recipientId){
         return   messageRepository.findMessageByRecipientId(recipientId);
-
-
     }
+public Message getMessageById(String id){
+        return messageRepository.getById(id);
+
+}
 
 }

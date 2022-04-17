@@ -5,9 +5,17 @@
     <title>Сообщения</title>
 </head>
 <body>
-Страница сообщений
+Страница сообщений ${printName}
+<br>
+Отправленные:
+<c:forEach items="mess" var="outMessages">
+
+${mess}
+
+</c:forEach>
 <br>
 
+    <br>
 <a href="/my_main_page/id/${id}">вернуться</a>
 
 </body>
