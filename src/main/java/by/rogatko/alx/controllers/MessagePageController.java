@@ -29,17 +29,17 @@ public class MessagePageController {
     //
 
 
-    @GetMapping({"/message_page{id}"})
+    @GetMapping({"/message_page/id/{id}"})
     public String showMessagePage(@PathVariable("id") String id, Model model) {
         model.addAttribute("id", id);
+        System.out.println("message page");
 
-
-        return "message_page" + id;
+        return "/message_page"  ;
     }
 
     @GetMapping("/my_main_page")
     public String returnToMain(){
-return "my_main_page";
+return "my_main_page"+"/id/"+id;
 
     }
 }

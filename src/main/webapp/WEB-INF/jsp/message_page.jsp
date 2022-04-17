@@ -8,7 +8,7 @@
 Страница сообщений
 <br>
 
-<a href="/my_main_page">вернуться</a>
+<a href="/my_main_page/id/${id}">вернуться</a>
 
 </body>
 </html>

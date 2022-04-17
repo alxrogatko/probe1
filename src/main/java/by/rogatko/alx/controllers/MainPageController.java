@@ -19,9 +19,10 @@ import java.util.Optional;
 
 
 public class MainPageController {
-public MainPageController(UserService userService){
-    this.userService=userService;
-}
+    public MainPageController(UserService userService) {
+        this.userService = userService;
+    }
+
     //
     @Id
     @GeneratedValue(generator = "uuid-generator")
@@ -31,15 +32,14 @@ public MainPageController(UserService userService){
     @Autowired
     private UserService userService;
 
-    @GetMapping({"/my_main_page{id}"})
-    public String showMainPage(@PathVariable("id")String id, Model model){
-        String message = userService.getUserById(id).getName()+" "+userService.getUserById(id).getSurname();
-       model.addAttribute("owner"," "+message);
+    @GetMapping({"/my_main_page/id/{id}"})
+    public String showMainPage(@PathVariable("id") String id, Model model) {
+        String message = userService.getUserById(id).getName() + " " + userService.getUserById(id).getSurname();
+        model.addAttribute("owner", " " + message);
         System.out.println(message);
 
         return "my_main_page";
     }
-
 
 
 }
