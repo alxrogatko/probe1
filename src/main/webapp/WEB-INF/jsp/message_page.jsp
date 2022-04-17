@@ -11,7 +11,6 @@
 <c:forEach items="mess" var="outMessages">
 
 ${mess}
-
 </c:forEach>
 <br>
 
