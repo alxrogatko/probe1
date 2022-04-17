@@ -8,9 +8,9 @@
 Страница сообщений ${printName}
 <br>
 Отправленные:
-<c:forEach items="mess" var="outMessages">
+<c:forEach items="${outMessages}" var="out">
 
-${mess}
+${out}
 </c:forEach>
 <br>
 
