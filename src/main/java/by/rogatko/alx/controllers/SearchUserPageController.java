@@ -43,10 +43,11 @@ public class SearchUserPageController {
     public String searchUser(@RequestParam("name") String name,
                              @RequestParam("surname") String surname,
                              Model model, @PathVariable String id) {
-        System.out.println("Id otladka !!!");//for debugging
+        //System.out.println("Id otladka !!!");//for debugging
         List<User> users = new ArrayList<>();
-      if(userService.getUserBySurname(surname)!=null) {  users = userService.getUserBySurname(surname);
-        model.addAttribute("listOfUsers", users);}
+
+      if(!users.isEmpty()) users = userService.getUserBySurname(surname);
+        model.addAttribute("listOfUsers", users);
         return "search_user_page";
         //
 

@@ -19,7 +19,7 @@ public class UserPageController {
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String id;
-
+    public String targetUserId;
     public UserPageController(UserService userService){
       this.userService=userService;
 
@@ -27,9 +27,10 @@ public class UserPageController {
 
     @Autowired
     private UserService userService;
-    @GetMapping("/user/id/{id}")
+    @GetMapping("/user/id/{targetUserId}")
     public String showUserPage(@PathVariable("id")String id, Model model){
-model.addAttribute("user",userService.getUserById(id).getName()+" "+userService.getUserById(id).getSurname());
+model.addAttribute("user",userService.getUserById(targetUserId).getName()+" "
+        +userService.getUserById(targetUserId).getSurname());
         return "user_page";
     }
 }

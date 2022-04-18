@@ -17,6 +17,10 @@ public class Message {
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
 private String id;
 
+
+
+
+
     @Setter
     private String senderId;
     @Setter

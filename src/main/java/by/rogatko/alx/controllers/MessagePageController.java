@@ -31,7 +31,7 @@ public class MessagePageController {
     @SneakyThrows
     @GetMapping({"/message_page/id/{id}"})
     public String showMessagePage(@PathVariable("id") String id, Model model) {
-        System.out.println("Отладка message page");
+       // System.out.println("Отладка message page");//for debugging
         model.addAttribute("id", id);
 
         User user = userService.getUserById(id);
