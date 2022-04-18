@@ -1,6 +1,8 @@
 package by.rogatko.alx.controllers;
 
 
+import by.rogatko.alx.entity.User;
+import by.rogatko.alx.services.MessageService;
 import by.rogatko.alx.services.UserService;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,20 +25,16 @@ public class SearchUserPageController {
     private String id;
     @Autowired
     private UserService userService;
+    @Autowired
+    private MessageService messageService;
     public SearchUserPageController(UserService userService){
         this.userService=userService;
     }
-    @GetMapping("/search_user_page")
-    public String showUserSearchPage( Model model){
+    @GetMapping("/search_user_page/id/{id}")
+    public String showUserSearchPage(@PathVariable("id")String id, Model model){
+        System.out.println("Id otladka "+id);//for debugging
 model.addAttribute("id",id);
         return "search_user_page";
     }
-    /*
-    @PostMapping("/my_main_page/id/")
-            public String returnToMyPage(){
-        System.out.println("Id otladka"+id);
-        return "/my_main_page"+id;
 
-            }
-            */
 }

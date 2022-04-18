@@ -9,7 +9,7 @@
 Вы вошли как ${owner}<br>
 <a href="/message_page/id/${id}">Сообщения</a><br>
 
-<a href="/search_user_page">Поиск людей</a><br>
+<a href="/search_user_page/id/${id}">Поиск людей</a><br>
 
 
 <a href="/logout">Выход</a>

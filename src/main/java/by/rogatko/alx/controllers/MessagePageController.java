@@ -45,7 +45,7 @@ model.addAttribute("inMessages",messageService.getMessagesByRecipientId(id));
 
     @GetMapping("/my_main_page")
     public String returnToMain() {
-        return "my_main_page" ;//+ "/id/" + id;
+        return "my_main_page" ;
 
     }
 }
