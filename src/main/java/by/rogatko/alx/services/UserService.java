@@ -5,6 +5,8 @@ import by.rogatko.alx.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,6 +46,11 @@ public String getIdByLogin(String login){
 public String getLoginById(String id){
         String login = userRepository.findUserById(id).get().getLogin();
         return login;
+}
+public List<User> getUserBySurname(String surname){
+        List<User> users= new ArrayList<User>();
+    users.add(userRepository.findUserBySurname(surname).get())  ;
+    return users;
 }
 }
 

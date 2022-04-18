@@ -9,12 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.GeneratedValue;
+import java.util.List;
+
 @SessionAttributes("userId")
 @Controller
 public class SearchUserPageController {
@@ -26,7 +25,7 @@ public class SearchUserPageController {
     @Autowired
     private UserService userService;
     @Autowired
-    private MessageService messageService;
+   // private MessageService messageService;
     public SearchUserPageController(UserService userService){
         this.userService=userService;
     }
@@ -35,6 +34,15 @@ public class SearchUserPageController {
         System.out.println("Id otladka "+id);//for debugging
 model.addAttribute("id",id);
         return "search_user_page";
+    }
+    @PostMapping("/search_user")
+    public List<User> searchUser(@RequestParam("name")String name,
+                                 @RequestParam("surname")String surname,
+                                 Model model){
+        return    userService.getUserBySurname(surname);
+         //
+
+        //
     }
 
 }
