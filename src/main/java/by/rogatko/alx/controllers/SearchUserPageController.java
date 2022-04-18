@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.GeneratedValue;
+import java.util.ArrayList;
 import java.util.List;
 
 @SessionAttributes("userId")
@@ -24,23 +25,30 @@ public class SearchUserPageController {
     private String id;
     @Autowired
     private UserService userService;
+
     @Autowired
-   // private MessageService messageService;
-    public SearchUserPageController(UserService userService){
-        this.userService=userService;
+    // private MessageService messageService;
+    public SearchUserPageController(UserService userService) {
+        this.userService = userService;
     }
+
     @GetMapping("/search_user_page/id/{id}")
-    public String showUserSearchPage(@PathVariable("id")String id, Model model){
-        System.out.println("Id otladka "+id);//for debugging
-model.addAttribute("id",id);
+    public String showUserSearchPage(@PathVariable("id") String id, Model model) {
+
+        model.addAttribute("id", id);
         return "search_user_page";
     }
-    @PostMapping("/search_user")
-    public List<User> searchUser(@RequestParam("name")String name,
-                                 @RequestParam("surname")String surname,
-                                 Model model){
-        return    userService.getUserBySurname(surname);
-         //
+
+    @PostMapping("/search_user_page/id/{id}")
+    public String searchUser(@RequestParam("name") String name,
+                             @RequestParam("surname") String surname,
+                             Model model, @PathVariable String id) {
+        System.out.println("Id otladka !!!");//for debugging
+        List<User> users = new ArrayList<>();
+      if(userService.getUserBySurname(surname)!=null) {  users = userService.getUserBySurname(surname);
+        model.addAttribute("listOfUsers", users);}
+        return "search_user_page";
+        //
 
         //
     }
