@@ -19,6 +19,7 @@ public class User {
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String id;
 @Setter
+@Getter
     private String name;
 
 

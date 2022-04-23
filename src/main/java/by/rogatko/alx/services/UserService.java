@@ -49,7 +49,7 @@ public String getLoginById(String id){
 }
 public List<User> getUserBySurname(String surname){
         List<User> users= new ArrayList<User>();
-    users.add(userRepository.findUserBySurname(surname).get())  ;
+   users=userRepository.findUserBySurname(surname)  ;
     return users;
 }
 }

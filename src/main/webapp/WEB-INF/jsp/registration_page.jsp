@@ -8,7 +8,7 @@
 ${message}
 <form action="/registration" method="post" >
 
-    <input type="text" name="name" placeholder="Имя"><br>
+    <input type="text" name="name" placeholder="Имя" autofocus><br>
     <input type="text" name="surname" placeholder="Фамилия"><br>
     <input type ="text" name="login" placeholder="Логин"><br>
     <input type="password" name="password" placeholder="Пароль"><br>

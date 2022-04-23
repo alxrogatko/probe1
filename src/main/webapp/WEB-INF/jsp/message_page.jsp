@@ -10,8 +10,10 @@
 Отправленные:
 <c:forEach items="${outMessages}" var="out">
 
-${out}
+${out.textOfMessage}
 </c:forEach>
+
+
 <br>
 
     <br>

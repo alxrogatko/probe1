@@ -8,7 +8,7 @@
 <body>
 ${message}
 <form action="/login"  method="post">
-    <input type="text" name="login" placeholder="Ваш Логин"><br>
+    <input type="text" name="login" placeholder="Ваш Логин" autofocus><br>
     <input type="password" name="password" placeholder="Пароль"><br>
     <button type="submit">ВХОД</button>
 </form><br>
