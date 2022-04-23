@@ -52,5 +52,13 @@ public List<User> getUserBySurname(String surname){
    users=userRepository.findUserBySurname(surname)  ;
     return users;
 }
+public String getNameById(String id){
+    return userRepository.getById(id).getName()  ;
+
+}
+public String getSurnameById(String id){
+
+        return userRepository.getById(id).getSurname();
+}
 }
 

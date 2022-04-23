@@ -11,8 +11,8 @@
     <input type="text" name="surname" placeholder="Фамилия"><br>
     <button type="submit">Поиск</button>
 </form><br>
-<c:forEach items="${listOfUsers}" var="user">${user.getName()} ${user.getSurname()}<br>
-    <a href="/user_page/id/${user.id}">click</a>
+<c:forEach items="${listOfUsers}" var="user">${user.getName()} ${user.getSurname()}
+    <a href="/user_page/id/${user.id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
     <br>
 </c:forEach>
 

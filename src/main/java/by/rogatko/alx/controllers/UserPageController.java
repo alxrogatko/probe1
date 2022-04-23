@@ -28,8 +28,9 @@ public class UserPageController {
     @Autowired
     private UserService userService;
     @GetMapping("/user_page/id/{id}")
-    public String showUserPage(@PathVariable("id")String id, Model model){
-
+    public String showUserPage(@PathVariable("id")String id, Model model,@PathVariable("id")String ids){
+model.addAttribute("holderName",userService.getNameById(ids));
+model.addAttribute("holderSurname",userService.getSurnameById(ids));
         return "user_page";
     }
 }

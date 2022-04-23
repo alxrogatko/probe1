@@ -6,7 +6,7 @@
     <title>${user}</title>
 </head>
 <body>
-Страница пользователя ${user}
+Страница пользователя ${holderName} ${holderSurname}
 
 </body>
 </html>
