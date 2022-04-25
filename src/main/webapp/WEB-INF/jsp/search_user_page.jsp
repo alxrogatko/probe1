@@ -15,6 +15,7 @@
     <a href="/user_page/id/${user.id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
     <br>
 </c:forEach>
+${error}
 
 
 

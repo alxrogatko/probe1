@@ -46,12 +46,15 @@ public class SearchUserPageController {
         //System.out.println("Id otladka !!!");//for debugging
         List<User> users; //= new ArrayList<>();
 
-       users = userService.getUserBySurname(surname);
-     if(!users.isEmpty()){ model.addAttribute("listOfUsers", users);
+        users = userService.getUserBySurname(surname);
+        if (!users.isEmpty()) {
+            model.addAttribute("listOfUsers", users);
 
 
-            System.out.println(users.get(0).getName()+" "+users.get(0).getSurname());//отладка
-       }
+            System.out.println(users.get(0).getName() + " " + users.get(0).getSurname());//отладка
+        } else {
+            model.addAttribute("error", "Пользователь не найден");
+        }
 
         return "search_user_page";
         //

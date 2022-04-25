@@ -14,6 +14,8 @@ ${message}
 </form><br>
 <a href="/registration">РЕГИСТРАЦИЯ</a>
 <br>
-<a href="/rulez">Правила и т.д.</a>
+<a href="/rulez">Правила и т.д.</a><br>
+<img src="../pictures/lpp.jpg" height="400">
 </body>
 </html>
+
