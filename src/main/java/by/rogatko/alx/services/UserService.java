@@ -13,52 +13,62 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    public void save(String name, String surname, String password, String login){
 
- User user = new User();
-    user.setName(name);
-    user.setSurname(surname);
-    user.setPassword(password);
-    user.setLogin(login);
-    save(user);
+    public void save(String name, String surname, String password, String login) {
+
+        User user = new User();
+        user.setName(name);
+        user.setSurname(surname);
+        user.setPassword(password);
+        user.setLogin(login);
+        save(user);
     }
-    private void save(User user){
+
+    private void save(User user) {
         userRepository.save(user);
     }
 
-public Optional<User> findUserByLogin(String login) {
-    return userRepository.findUserByLogin(login);
+    public Optional<User> findUserByLogin(String login) {
+        return userRepository.findUserByLogin(login);
 
-}
-public User getUserById(String id){return userRepository.getById(id);
+    }
 
-}
-public String getPasswordByLogin(String login){
+    public User getUserById(String id) {
+        return userRepository.getById(id);
+
+    }
+
+    public String getPasswordByLogin(String login) {
         Optional<User> user = userRepository.findUserByLogin(login);
-    return user.get().getPassword();
-}
-public String getIdByLogin(String login){
-      Optional<User> user = userRepository.findUserByLogin(login);
-      return user.get().getId();
+        return user.get().getPassword(); //так делать нельзя, это временная мера
+    }
+
+    public String getIdByLogin(String login) {
+        Optional<User> user = userRepository.findUserByLogin(login);
+        return user.get().getId();
 
 
-}
-public String getLoginById(String id){
+    }
+
+    public String getLoginById(String id) {
         String login = userRepository.findUserById(id).get().getLogin();
         return login;
-}
-public List<User> getUserBySurname(String surname){
-        List<User> users= new ArrayList<User>();
-   users=userRepository.findUserBySurname(surname)  ;
-    return users;
-}
-public String getNameById(String id){
-    return userRepository.getById(id).getName()  ;
+    }
 
-}
-public String getSurnameById(String id){
+    public List<User> getUserBySurname(String surname) {
+        List<User> users = new ArrayList<User>();
+        users = userRepository.findUserBySurname(surname);
+        return users;
+    }
+
+    public String getNameById(String id) {
+        return userRepository.getById(id).getName();
+
+    }
+
+    public String getSurnameById(String id) {
 
         return userRepository.getById(id).getSurname();
-}
+    }
 }
 

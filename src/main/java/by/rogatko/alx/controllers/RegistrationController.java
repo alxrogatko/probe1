@@ -1,8 +1,6 @@
 package by.rogatko.alx.controllers;
 
-import by.rogatko.alx.entity.User;
 import by.rogatko.alx.services.UserService;
-import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,8 +46,9 @@ public class RegistrationController {
         ) {
             model.addAttribute("message", "Логин занят, выберите другой");
             return "registration_page";
-        } else {userService.save(userName, userSurname, password, login);
-                   return "login_page";
+        } else {
+            userService.save(userName, userSurname, password, login);
+            return "login_page";
 
         }
     }

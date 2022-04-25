@@ -18,19 +18,29 @@ public class UserPageController {
     @Id
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
-    private String id;
-    public String targetUserId;
-    public UserPageController(UserService userService){
-      this.userService=userService;
+
+    private String userId;
+
+    //public String targetUserId;
+    public UserPageController(UserService userService) {
+        this.userService = userService;
 
     }
 
     @Autowired
     private UserService userService;
-    @GetMapping("/user_page/id/{id}")
-    public String showUserPage(@PathVariable("id")String id, Model model,@PathVariable("id")String ids){
-model.addAttribute("holderName",userService.getNameById(ids));
-model.addAttribute("holderSurname",userService.getSurnameById(ids));
+
+    @GetMapping("/user_page/id/{id}/q/{ids}")
+    public String showUserPage(Model model, @PathVariable("id") String id, @PathVariable("ids") String ids) {
+
+
+        model.addAttribute("holderName", userService.getNameById(id));
+        model.addAttribute("holderSurname", userService.getSurnameById(id));
+
+;
+//model.addAttribute("id",userId);
+      //  model.addAttribute("id", ids);
+        System.out.println(model.getAttribute("userId")+" Отладка userPageController");
         return "user_page";
     }
 }

@@ -6,7 +6,15 @@
     <title>${user}</title>
 </head>
 <body>
-Страница пользователя ${holderName} ${holderSurname}
+Страница пользователя ${holderName} ${holderSurname}<br>
+<br>
+<form action="/send_message" method="post">
+
+    <input type="text" name="message" placeholder="Введите сообщение" autofocus><br>
+    <button type="submit">Отправить сообщение ${holderName}</button>
+</form>
+<a href="/my_main_page/id/${ids}">Вернуться</a>
+
 
 </body>
 </html>

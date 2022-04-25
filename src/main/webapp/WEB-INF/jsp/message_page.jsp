@@ -10,13 +10,13 @@
 Отправленные:
 <c:forEach items="${outMessages}" var="out">
 
-${out.textOfMessage}
+    ${out.textOfMessage}
 </c:forEach>
 
 
 <br>
 
-    <br>
+<br>
 <a href="/my_main_page/id/${id}">вернуться</a>
 
 </body>

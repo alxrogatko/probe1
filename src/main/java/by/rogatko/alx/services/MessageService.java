@@ -13,35 +13,36 @@ import java.util.List;
 public class MessageService {
 
 
-
     @Autowired
     private MessageRepository messageRepository;
 
-    public void save(String senderId, String recipientId, Date date, String text){
-        Message message = new Message() ;
+    public void save(String senderId, String recipientId, Date date, String text) {
+        Message message = new Message();
         message.setReadMessage(false);
         message.setRecipientId(recipientId);
         message.setDateOfSent(date);
         message.setSenderId(senderId);
     }
 
-private void save(Message message){
-messageRepository.save(message);
+    private void save(Message message) {
+        messageRepository.save(message);
 
 
-}
-public List<Message> getMessagesBySenderId(String senderId){
-     return   messageRepository.findMessageBySenderId(senderId);
-
-
-}
-
-    public List<Message> getMessagesByRecipientId(String recipientId){
-        return   messageRepository.findMessageByRecipientId(recipientId);
     }
-public Message getMessageById(String id){
+
+    public List<Message> getMessagesBySenderId(String senderId) {
+        return messageRepository.findMessageBySenderId(senderId);
+
+
+    }
+
+    public List<Message> getMessagesByRecipientId(String recipientId) {
+        return messageRepository.findMessageByRecipientId(recipientId);
+    }
+
+    public Message getMessageById(String id) {
         return messageRepository.getById(id);
 
-}
+    }
 
 }

@@ -1,7 +1,6 @@
 package by.rogatko.alx.repository;
 
 import by.rogatko.alx.entity.Message;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

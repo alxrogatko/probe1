@@ -6,20 +6,26 @@
     <title>Поиск пользователей</title>
 </head>
 <body>
-<form method="post" action="/search_user_page/id/${id}"  >
+<form method="post" action="/search_user_page/id/${id}">
     <input type="text" name="name" placeholder="Имя" autofocus><br>
     <input type="text" name="surname" placeholder="Фамилия"><br>
     <button type="submit">Поиск</button>
-</form><br>
+</form>
+<br>
 <c:forEach items="${listOfUsers}" var="user">${user.getName()} ${user.getSurname()}
-    <a href="/user_page/id/${user.id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
+
+    <c:if test="${!user.id.equals(id)}">
+        <a href="/user_page/id/${user.id}/q/${id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
+
+
+    </c:if>
+    <c:if test="${user.id.equals(id)}">
+        <a href="/my_main_page/id/${user.id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
+
+    </c:if>
     <br>
 </c:forEach>
 ${error}
-
-
-
-
 
 
 <br>

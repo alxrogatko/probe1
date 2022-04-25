@@ -2,7 +2,6 @@ package by.rogatko.alx.controllers;
 
 
 import by.rogatko.alx.entity.User;
-import by.rogatko.alx.services.MessageService;
 import by.rogatko.alx.services.UserService;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.GeneratedValue;
-import java.util.ArrayList;
 import java.util.List;
 
 @SessionAttributes("userId")
@@ -49,6 +47,7 @@ public class SearchUserPageController {
         users = userService.getUserBySurname(surname);
         if (!users.isEmpty()) {
             model.addAttribute("listOfUsers", users);
+            model.addAttribute("currentUserId", id);
 
 
             System.out.println(users.get(0).getName() + " " + users.get(0).getSurname());//отладка

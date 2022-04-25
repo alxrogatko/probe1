@@ -15,10 +15,7 @@ public class Message {
     @Id
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
-private String id;
-
-
-
+    private String id;
 
 
     @Setter
@@ -31,9 +28,6 @@ private String id;
     private String textOfMessage;
     @Setter
     private boolean readMessage;
-
-
-
 
 
 }

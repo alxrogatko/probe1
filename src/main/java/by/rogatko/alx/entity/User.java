@@ -5,11 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.ArrayList;
 
 @Entity
 @Getter
@@ -18,22 +16,16 @@ public class User {
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String id;
-@Setter
-@Getter
+    @Setter
     private String name;
 
 
-@Setter
+    @Setter
     private String surname;
-@Setter
+    @Setter
     private String password;
-@Setter
+    @Setter
     private String login;
-
-
-
-
-
 
 
 }

@@ -1,6 +1,5 @@
 package by.rogatko.alx.controllers;
 
-import by.rogatko.alx.entity.User;
 import by.rogatko.alx.services.UserService;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Optional;
 
 @Controller
 @SessionAttributes("userId")
