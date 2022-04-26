@@ -38,7 +38,6 @@ public class UserPageController {
         model.addAttribute("holderSurname", userService.getSurnameById(id));
 
 
-
         //System.out.println(model.getAttribute("userId")+" Отладка userPageController");
         return "user_page";
     }

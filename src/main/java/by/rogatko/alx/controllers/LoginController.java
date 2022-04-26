@@ -36,7 +36,7 @@ public class LoginController {
         if (
                 userService.findUserByLogin(login).isPresent() &&
                         password.equals(userService.getPasswordByLogin(login))) {
-            model.addAttribute("userId",userService.getIdByLogin(login));//
+            model.addAttribute("userId", userService.getIdByLogin(login));//
             return "redirect:/my_main_page" + "/id/" + userService.getIdByLogin(login);
         } else {
             model.addAttribute("message", "Проверьте правильность введенных данных");

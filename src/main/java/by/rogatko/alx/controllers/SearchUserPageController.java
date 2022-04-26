@@ -58,7 +58,6 @@ public class SearchUserPageController {
         return "search_user_page";
 
 
-
     }
 
 }
