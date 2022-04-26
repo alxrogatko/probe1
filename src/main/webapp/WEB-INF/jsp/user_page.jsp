@@ -13,7 +13,7 @@
     <input type="text" name="message" placeholder="Введите сообщение" autofocus><br>
     <button type="submit">Отправить сообщение ${holderName}</button>
 </form>
-<a href="/my_main_page/id/${ids}">Вернуться</a>
+<a href="/my_main_page/id/${userId}">Вернуться</a>
 
 
 </body>

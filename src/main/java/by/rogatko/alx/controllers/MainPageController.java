@@ -32,6 +32,13 @@ public class MainPageController {
 
     @GetMapping({"/my_main_page/id/{id}"})
     public String showMainPage(@PathVariable("id") String id, Model model) {
+        String userId= (String) model.getAttribute("userId");//
+
+        if(userId==null){return "redirect:/login_page";}
+       if(!userId.equals(id)){
+           System.out.println("mpg ch1");
+           return "redirect:/user_page"+"/id/"+id;}
+
         String message = userService.getUserById(id).getName() + " " + userService.getUserById(id).getSurname();
         model.addAttribute("owner", " " + message);
         System.out.println(message);

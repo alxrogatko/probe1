@@ -21,7 +21,7 @@ public class UserPageController {
 
     private String userId;
 
-    //public String targetUserId;
+
     public UserPageController(UserService userService) {
         this.userService = userService;
 
@@ -30,17 +30,16 @@ public class UserPageController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user_page/id/{id}/q/{ids}")
-    public String showUserPage(Model model, @PathVariable("id") String id, @PathVariable("ids") String ids) {
+    @GetMapping("/user_page/id/{id}")
+    public String showUserPage(Model model, @PathVariable("id") String id) {
 
 
         model.addAttribute("holderName", userService.getNameById(id));
         model.addAttribute("holderSurname", userService.getSurnameById(id));
 
-;
-//model.addAttribute("id",userId);
-      //  model.addAttribute("id", ids);
-        System.out.println(model.getAttribute("userId")+" Отладка userPageController");
+
+
+        //System.out.println(model.getAttribute("userId")+" Отладка userPageController");
         return "user_page";
     }
 }

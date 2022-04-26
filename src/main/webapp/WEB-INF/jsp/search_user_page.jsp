@@ -15,7 +15,7 @@
 <c:forEach items="${listOfUsers}" var="user">${user.getName()} ${user.getSurname()}
 
     <c:if test="${!user.id.equals(id)}">
-        <a href="/user_page/id/${user.id}/q/${id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
+        <a href="/user_page/id/${user.id}">Перейти на страницу ${user.getName()} ${user.getSurname()} </a>
 
 
     </c:if>

@@ -41,8 +41,8 @@ public class SearchUserPageController {
     public String searchUser(@RequestParam("name") String name,
                              @RequestParam("surname") String surname,
                              Model model, @PathVariable String id) {
-        //System.out.println("Id otladka !!!");//for debugging
-        List<User> users; //= new ArrayList<>();
+
+        List<User> users;
 
         users = userService.getUserBySurname(surname);
         if (!users.isEmpty()) {
@@ -56,9 +56,9 @@ public class SearchUserPageController {
         }
 
         return "search_user_page";
-        //
 
-        //
+
+
     }
 
 }
