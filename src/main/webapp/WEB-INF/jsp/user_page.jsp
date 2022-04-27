@@ -13,6 +13,9 @@
     <input type="text" name="message" placeholder="Введите сообщение" autofocus><br>
     <button type="submit">Отправить сообщение ${holderName}</button>
 </form>
+<br>
+<a href="/photo_album_page/id/${id}">Перейти в фотоальбом ${holderName} ${holderSurname}</a>
+<br>
 <a href="/my_main_page/id/${userId}">Вернуться</a>
 
 
