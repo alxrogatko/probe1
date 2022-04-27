@@ -7,4 +7,6 @@
 <body>
 Фотоальбом ${holderName} ${holderSurname}<br>
 </body>
+<br>
+<a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a>
 </html>
