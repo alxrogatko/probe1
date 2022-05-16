@@ -6,6 +6,9 @@
     <title>Поиск пользователей</title>
 </head>
 <body>
+<c:if test="${userId == null}">
+    <c:redirect url="/"/>
+</c:if>
 <form method="post" action="/search_user_page/id/${id}">
     <input type="text" name="name" placeholder="Имя" autofocus><br>
     <input type="text" name="surname" placeholder="Фамилия"><br>

@@ -5,6 +5,9 @@
     <title>Сообщения</title>
 </head>
 <body>
+<c:if test="${userId == null}">
+    <c:redirect url="/"/>
+</c:if>
 Страница сообщений ${printName}
 <br>
 Отправленные:

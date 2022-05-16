@@ -5,8 +5,17 @@
     <title>Фотоальбом ${holderName} ${holderSurname}</title>
 </head>
 <body>
+<c:if test="${userId == null}">
+    <c:redirect url="/"/>
+</c:if>
 Фотоальбом ${holderName} ${holderSurname}<br>
 </body>
 <br>
-<a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a>
+<a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a><br>
+<c:if test="${id==userId}">
+    <form method="post" action="/add_photo" enctype="multipart/form-data">
+        <br>Добавить фото
+        <input type="file" name="image"><br>
+        <button type="submit">Сохранить</button></form>
+</c:if>
 </html>

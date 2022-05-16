@@ -6,6 +6,9 @@
     <title>${user}</title>
 </head>
 <body>
+<c:if test="${userId == null}">
+    <c:redirect url="/"/>
+</c:if>
 Страница пользователя ${holderName} ${holderSurname}<br>
 <br>
 <form action="/send_message" method="post">

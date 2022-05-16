@@ -14,7 +14,7 @@ public class PhotoAlbumService {
         photoAlbumRepository.save(userPhoto);
     }
 
-    public void save(String nameOfPhoto, String id, String holderId, String pathOfPhoto) {
+    public void save(String nameOfPhoto, String holderId, String pathOfPhoto) {
         UserPhoto userPhoto = new UserPhoto(pathOfPhoto, nameOfPhoto, holderId);
         save(userPhoto);
 

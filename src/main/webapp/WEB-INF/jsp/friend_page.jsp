@@ -11,6 +11,9 @@
     <title>Page</title>
 </head>
 <body>
+<c:if test="${userId == null}">
+    <c:redirect url="/"/>
+</c:if>
 
 </body>
 </html>
