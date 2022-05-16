@@ -27,7 +27,10 @@ public class UserPhoto {
     @Getter
     @Setter
     private String holderId;
-public UserPhoto(){}
+
+    public UserPhoto() {
+    }
+
     public UserPhoto(String pathOfPhoto, String nameOfPhoto, String holderId) {
         this.pathOfPhoto = pathOfPhoto;
         this.nameOfPhoto = nameOfPhoto;

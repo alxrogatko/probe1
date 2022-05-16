@@ -12,10 +12,15 @@
 </body>
 <br>
 <a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a><br>
+<c:forEach items="${listOfPhoto}" var="photo">
+    <img src="toString().${photo}"><br>
+
+</c:forEach>
 <c:if test="${id==userId}">
     <form method="post" action="/add_photo" enctype="multipart/form-data">
         <br>Добавить фото
         <input type="file" name="image"><br>
-        <button type="submit">Сохранить</button></form>
+        <button type="submit">Сохранить</button>
+    </form>
 </c:if>
 </html>
