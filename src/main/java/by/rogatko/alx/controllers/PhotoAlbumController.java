@@ -32,8 +32,9 @@ model.addAttribute("listOfPhoto",photoAlbumService.getPathPhotoByUserId(id));
     @PostMapping("/add_photo")
     public String addPhoto(@RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
         Path path = Paths.get("src", "main", "webapp", "pictures", "users_photoalbums", multipartFile.getOriginalFilename());
-        multipartFile.transferTo(path);
-        photoAlbumService.save(multipartFile.getOriginalFilename(), (String) model.getAttribute("userId"), path.toString());
+        String stringPath = "/pictures/users_photoalbums/"+multipartFile.getOriginalFilename()
+;        multipartFile.transferTo(path);
+        photoAlbumService.save(multipartFile.getOriginalFilename(), (String) model.getAttribute("userId"), stringPath);
         String id = (String) model.getAttribute("userId");
         return "redirect:/photo_album_page/id/" + id;
     }

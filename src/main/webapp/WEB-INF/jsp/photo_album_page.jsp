@@ -13,7 +13,7 @@
 <br>
 <a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a><br>
 <c:forEach items="${listOfPhoto}" var="photo">
-    <img src="toString().${photo}"><br>
+    <img src="../../${photo}"><br>
 
 </c:forEach>
 <c:if test="${id==userId}">

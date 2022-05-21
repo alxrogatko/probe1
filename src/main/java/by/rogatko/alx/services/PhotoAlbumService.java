@@ -27,7 +27,7 @@ public class PhotoAlbumService {
         for(int i = 0;i<userPhotos.size();i++){
             pathes.add(userPhotos.get(i).getPathOfPhoto());
         }
-        return null;
+        return pathes;
         }
 
     }

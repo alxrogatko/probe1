@@ -50,7 +50,7 @@ public class SearchUserPageController {
             model.addAttribute("currentUserId", id);
 
 
-            System.out.println(users.get(0).getName() + " " + users.get(0).getSurname());//отладка
+
         } else {
             model.addAttribute("error", "Пользователь не найден");
         }
