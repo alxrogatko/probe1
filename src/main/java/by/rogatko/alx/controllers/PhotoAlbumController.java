@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -36,6 +37,18 @@ model.addAttribute("listOfPhoto",photoAlbumService.getPathPhotoByUserId(id));
 ;        multipartFile.transferTo(path);
         photoAlbumService.save(multipartFile.getOriginalFilename(), (String) model.getAttribute("userId"), stringPath);
         String id = (String) model.getAttribute("userId");
+        return "redirect:/photo_album_page/id/" + id;
+    }
+    @PostMapping("/delete_photo")
+    public String deletePhoto(@RequestParam("delete")String stringPath, Model model){
+
+
+        photoAlbumService.deletePhotoByPath(stringPath);
+        String id = (String) model.getAttribute("userId");
+
+        File file = new File("src/main/webapp/"+stringPath);
+        System.out.println(file.toString());
+        file.delete();
         return "redirect:/photo_album_page/id/" + id;
     }
 

@@ -29,6 +29,10 @@ public class PhotoAlbumService {
         }
         return pathes;
         }
+public void deletePhotoByPath(String pathOfPhoto){
 
+        photoAlbumRepository.deleteUserPhotoByPathOfPhoto(pathOfPhoto);
+
+}
     }
 
