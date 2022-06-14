@@ -25,11 +25,11 @@ public class PhotoAlbumService {
 
     public List<String> getPathPhotoByUserId(String holderId) {
         List<UserPhoto> userPhotos = photoAlbumRepository.findUserPhotoByHolderId(holderId);
-        List<String> pathes = new ArrayList<>();
+        List<String> pathesOfPhoto = new ArrayList<>();
         for (int i = 0; i < userPhotos.size(); i++) {
-            pathes.add(userPhotos.get(i).getPathOfPhoto());
+            pathesOfPhoto.add(userPhotos.get(i).getPathOfPhoto());
         }
-        return pathes;
+        return pathesOfPhoto;
     }
 
     public void deletePhotoByPath(String pathOfPhoto) {

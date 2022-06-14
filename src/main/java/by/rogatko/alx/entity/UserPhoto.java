@@ -38,12 +38,13 @@ public class UserPhoto {
 
     public UserPhoto(String pathOfPhoto, String nameOfPhoto, String holderId) {
         this.pathOfPhoto = pathOfPhoto;
-        this.nameOfPhoto = nameOfPhoto;
+
         this.holderId = holderId;
         Date date = new Date();
 
         dateOfPhoto = String.valueOf(date);
-
+        this.nameOfPhoto = nameOfPhoto;
+        System.out.println(dateOfPhoto);
     }
 
 }

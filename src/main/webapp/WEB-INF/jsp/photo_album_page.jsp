@@ -13,7 +13,7 @@
 <br>
 <a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a><br>
 <c:forEach items="${listPathesOfPhoto}" var="photo">
-    <img src="../../${photo}"><br>
+    <img src="../../${photo}" width="300"><br>
 
     <c:if test="${id==userId}">
         <form method="post" action="/delete_photo">
@@ -26,7 +26,7 @@
 </c:forEach>
 <c:if test="${id==userId}">
     <form method="post" action="/add_photo" enctype="multipart/form-data">
-        <br>Добавить фото
+        <br>Добавить фото<br>
         <input type="file" name="image"><br>
         <button type="submit">Сохранить</button>
     </form>
