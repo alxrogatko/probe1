@@ -11,11 +11,11 @@ import java.util.List;
 @Transactional
 public interface PhotoAlbumRepository extends JpaRepository<UserPhoto, String> {
     @Query("from UserPhoto where holderId=:holderId")
-        List<UserPhoto> findUserPhotoByHolderId(@Param("holderId")String holderId);
+    List<UserPhoto> findUserPhotoByHolderId(@Param("holderId") String holderId);
 
 
-   //@Query ("from UserPhoto where pathOfPhoto=:pathOfPhoto")
-     void deleteUserPhotoByPathOfPhoto(@Param("pathOfPhoto")String pathOfPhoto);
+    // @Query ("from UserPhoto where pathOfPhoto=:pathOfPhoto")
+    void deleteUserPhotoByPathOfPhoto(@Param("pathOfPhoto") String pathOfPhoto);
 
 
 }

@@ -5,7 +5,8 @@ import by.rogatko.alx.repository.PhotoAlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PhotoAlbumService {
@@ -21,18 +22,20 @@ public class PhotoAlbumService {
         save(userPhoto);
 
     }
-    public List<String> getPathPhotoByUserId(String holderId){
-        List<UserPhoto> userPhotos= photoAlbumRepository.findUserPhotoByHolderId(holderId);
+
+    public List<String> getPathPhotoByUserId(String holderId) {
+        List<UserPhoto> userPhotos = photoAlbumRepository.findUserPhotoByHolderId(holderId);
         List<String> pathes = new ArrayList<>();
-        for(int i = 0;i<userPhotos.size();i++){
+        for (int i = 0; i < userPhotos.size(); i++) {
             pathes.add(userPhotos.get(i).getPathOfPhoto());
         }
         return pathes;
-        }
-public void deletePhotoByPath(String pathOfPhoto){
+    }
+
+    public void deletePhotoByPath(String pathOfPhoto) {
 
         photoAlbumRepository.deleteUserPhotoByPathOfPhoto(pathOfPhoto);
 
-}
     }
+}
 

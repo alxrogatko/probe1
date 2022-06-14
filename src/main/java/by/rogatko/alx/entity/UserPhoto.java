@@ -17,16 +17,21 @@ public class UserPhoto {
     private String id;
     @Getter
     @Setter
-    private String pathOfPhoto;
+    private String pathOfPhoto;//путь к фотографии
     @Getter
     @Setter
-    private String nameOfPhoto;
+    private String nameOfPhoto;//имя файла фото
     @Getter
     @Setter
-    private String dateOfPhoto;
+    private String dateOfPhoto;//дата загрузки фото
     @Getter
     @Setter
-    private String holderId;
+    private String holderId;// id владельца фото
+
+    @Getter
+    @Setter
+    private String titlePhoto;//название фото
+
 
     public UserPhoto() {
     }

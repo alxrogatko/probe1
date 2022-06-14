@@ -50,7 +50,6 @@ public class SearchUserPageController {
             model.addAttribute("currentUserId", id);
 
 
-
         } else {
             model.addAttribute("error", "Пользователь не найден");
         }

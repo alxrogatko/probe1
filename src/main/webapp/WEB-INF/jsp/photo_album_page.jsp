@@ -12,15 +12,17 @@
 </body>
 <br>
 <a href="/user_page/id/${id}">Назад на страницу ${holderName} ${holderSurname}</a><br>
-<c:forEach items="${listOfPhoto}" var="photo">
+<c:forEach items="${listPathesOfPhoto}" var="photo">
     <img src="../../${photo}"><br>
-    <form method="post" action="/delete_photo" >
+
+    <c:if test="${id==userId}">
+        <form method="post" action="/delete_photo">
 
 
-
-        <button type="submit" name="delete" value="${photo}" >Удалить </button>
+            <button type="submit" name="delete" value="${photo}">Удалить</button>
         </form>
-<br>
+    </c:if>
+    <br>
 </c:forEach>
 <c:if test="${id==userId}">
     <form method="post" action="/add_photo" enctype="multipart/form-data">
